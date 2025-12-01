@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KKU Campus Guide - แนะนำสถานที่ภายในมหาวิทยาลัยขอนแก่น</title>
+  <style>
+    :root{
+      --accent:#A73B24;
+      --muted:#6b7280;
+      --card:#ffffff;
+      --bg:#faf8f6;
+      --max-width:1100px;
+    }
+    *,*::before,*::after{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: "Kanit", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background:var(--bg);
+      color:#0f172a;
+      line-height:1.5;
+      -webkit-font-smoothing:antialiased;
+      padding:24px;
+      display:flex;
+      justify-content:center;
+    }
+    .site{width:100%;max-width:var(--max-width)}
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      margin-bottom:18px;
+    }
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:56px;height:56px;border-radius:8px;display:flex;align-items:center;justify-content:center;overflow:hidden;animation:float 3s ease-in-out infinite}
+    .logo img{width:100%;height:100%;object-fit:contain;transition:all .3s ease}
+    @keyframes float{0%,100%{transform:translateY(0px)}50%{transform:translateY(-8px)}}
+    h1{font-size:1.25rem;margin:0;text-align:left}
+    .meta{font-size:.95rem;color:var(--muted)}
+
+    nav{
+      background:var(--card);
+      border-radius:10px;
+      padding:12px 14px;
+      box-shadow:0 2px 6px rgba(11,20,40,.06);
+      margin-bottom:18px;
+    }
+    nav a{color:var(--accent);text-decoration:none;margin-right:12px}
+
+    main{display:grid;grid-template-columns:1fr;gap:18px}
+
+    .hero{
+      background:linear-gradient(90deg,rgba(167,59,36,.08),rgba(167,59,36,.05));
+      border-radius:12px;padding:18px;display:flex;gap:16px;align-items:center;
+    }
+    .hero p{margin:0;color:var(--muted)}
+
+    .places{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    article.place{
+      background:var(--card);
+      border-radius:10px;padding:14px;
+      box-shadow:0 6px 18px rgba(10,20,40,.06);
+      display:flex;flex-direction:column;gap:12px;
+    }
+    article.place header{display:flex;align-items:center;justify-content:space-between}
+    article.place h2{margin:0;font-size:1.05rem}
+    .desc{color:var(--muted);font-size:.95rem}
+
+    .gallery{display:flex;gap:8px}
+    .gallery figure{margin:0;flex:1;background:#eef4fb;border-radius:8px;overflow:hidden}
+    .gallery img{width:100%;height:160px;object-fit:cover;display:block}
+    .gallery figcaption{padding:8px 10px;font-size:.85rem;color:var(--muted)}
+
+    .hero-img{width:160px;height:100px;object-fit:cover;border-radius:8px}
+
+    footer{margin-top:14px;padding:12px;color:var(--muted);font-size:.9rem}
+
+    /* Responsive */
+    @media (max-width:1024px){
+      body{padding:16px}
+      header{flex-direction:column;text-align:center;gap:10px}
+      .brand{justify-content:center}
+      nav{padding:10px;text-align:center}
+      nav a{margin-right:8px;font-size:.9rem}
+      .places{grid-template-columns:1fr}
+      .gallery img{height:140px}
+      .hero-img{width:140px;height:90px}
+    }
+    @media (max-width:768px){
+      body{padding:14px}
+      h1{font-size:1.1rem}
+      .meta{font-size:.9rem}
+      nav{padding:10px 8px}
+      nav a{display:inline-block;margin-right:6px;font-size:.85rem}
+      article.place h2{font-size:1rem}
+      .gallery{gap:6px}
+      .gallery img{height:120px}
+      .hero-img{width:120px;height:75px}
+    }
+    @media (max-width:600px){
+      body{padding:12px}
+      header{flex-direction:column;gap:8px;text-align:center;align-items:center}
+      .brand{flex-direction:column;align-items:center;gap:8px}
+      .brand > div{display:flex;flex-direction:column;align-items:center}
+      .logo{width:48px;height:48px}
+      h1{font-size:.95rem;text-align:center}
+      .meta{font-size:.85rem;text-align:center}
+      nav{padding:8px;border-radius:8px}
+      nav a{display:block;margin-right:0;margin-bottom:6px;font-size:.8rem;padding:4px 0}
+      nav a:last-child{margin-bottom:0}
+      .hero{flex-direction:column;padding:14px;gap:12px}
+      .hero img{width:100%;max-width:140px;height:80px}
+      .hero h2{font-size:1rem}
+      .hero p{font-size:.9rem}
+      article.place{padding:10px;gap:10px}
+      article.place h2{font-size:.95rem}
+      article.place header{flex-direction:column;align-items:flex-start}
+      .desc{font-size:.85rem}
+      .gallery{flex-direction:column;gap:6px}
+      .gallery figure{flex:none}
+      .gallery img{height:150px;width:100%}
+      .gallery figcaption{font-size:.75rem;padding:6px 8px}
+      footer{font-size:.8rem;padding:8px}
+      .hero-img{width:100px;height:70px}
+    }
+    @media (max-width:460px){
+      body{padding:10px}
+      .logo{width:44px;height:44px}
+      h1{font-size:.85rem}
+      .meta{font-size:.75rem}
+      nav{padding:6px;margin-bottom:12px}
+      nav a{font-size:.75rem;padding:3px 0}
+      .hero{padding:10px}
+      .hero img{max-width:120px;height:70px}
+      .hero h2{font-size:.9rem}
+      .hero p{font-size:.8rem}
+      article.place{padding:8px}
+      article.place h2{font-size:.85rem}
+      .desc{font-size:.8rem}
+      .gallery img{height:140px}
+      .gallery figcaption{font-size:.7rem}
+      footer{font-size:.7rem}
+      .hero-img{width:90px;height:60px}
+    }
+  </style>
+</head>
+<body>
+  <div class="site">
+    <header>
+      <div class="brand">
+        <div class="logo">
+          <img src="images/LogoKKUthai_150px.png" alt="KKU Logo">
+        </div>
+        <div>
+          <h1>KKU Campus Guide</h1>
+          <div class="meta">รหัสนักศึกษา: <strong>6633800017-6</strong> &nbsp;|&nbsp; ชื่อ-สกุล: <strong>นราวิชญ์ คำปุทา</strong></div>
+        </div>
+      </div>
+      <div class="meta">มหาวิทยาลัยขอนแก่น</div>
+    </header>
+
+    <nav>
+      <a href="#library">สำนักหอสมุด</a>
+      <a href="#auditorium">ศูนย์ประชุมอเนกประสงค์กาญจนาภิเษก</a>
+      <a href="#student-center">สนามกีฬากลางและสระว่ายน้ำชนเห็นชอบ</a>
+      <a href="#botanical">อุทยานเกษตร</a>
+    </nav>
+
+    <main>
+      <section class="hero">
+        <div style="flex:1">
+          <h2>ยินดีต้อนรับสู่ KKU Campus Guide</h2>
+          <p>เว็บนี้รวบรวมสถานที่ที่น่าสนใจภายในมหาวิทยาลัยขอนแก่น พร้อมคำอธิบายและภาพประกอบ เพื่อให้ผู้มาเยือนหรือเพื่อนนักศึกษาค้นหาสถานที่ได้ง่ายขึ้น</p>
+        </div>
+        <img src="images\09ประตูขอนแก่น.jpg" alt="KKU campus" class="hero-img">
+      </section>
+
+      <section class="places">
+        <article id="library" class="place">
+          <header>
+            <h2>สำนักหอสมุด มหาวิทยาลัยขอนแก่น</h2>
+          </header>
+          <p class="desc">หอสมุดกลางเป็นศูนย์กลางด้านการเรียนรู้ของมหาวิทยาลัย มีหนังสือ วิจัย และพื้นที่อ่านหนังสือที่ทันสมัย เหมาะกับการค้นคว้าและทำงานกลุ่ม</p>
+          <div class="gallery">
+            <figure>
+              <img src="images\01Central Library.jpeg" alt="library interior">
+              <figcaption>สำนักหอสมุด มหาวิทยาลัยขอนแก่น</figcaption>
+            </figure>
+            <figure>
+              <img src="images\02work space.jpg" alt="students studying in library">
+              <figcaption>พื้นที่เงียบสำหรับการศึกษาค้นคว้า</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <article id="auditorium" class="place">
+          <header>
+            <h2>ศูนย์ประชุมอเนกประสงค์กาญจนาภิเษก มหาวิทยาลัยขอนแก่น</h2>
+          </header>
+          <p class="desc">หอประชุมของมหาวิทยาลัยเป็นสถานที่จัดกิจกรรมใหญ่ เช่น พิธีจบการศึกษา การบรรยายพิเศษ และการแสดงทางวัฒนธรรม</p>
+          <div class="gallery">
+            <figure>
+              <img src="images\03Auditorium.jpg" alt="auditorium interior">
+              <figcaption>ฮอลล์ขนาดใหญ่สำหรับการประชุมและงานอีเวนต์</figcaption>
+            </figure>
+            <figure>
+              <img src="images\04inAuditorium.jpg" alt="stage and audience">
+              <figcaption>เวทีและที่นั่งผู้ชม</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <article id="student-center" class="place">
+          <header>
+            <h2>สนามกีฬากลางและสระว่ายน้ำชนเห็นชอบ มหาวิทยาลัยขอนแก่น</h2>
+          </header>
+          <p class="desc">ศูนย์กลางการกีฬาของมหาวิทยาลัย ใช้สำหรับจัดกิจกรรมกีฬาและการแข่งขันต่างๆ ทั้งในร่มและกลางแจ้ง</p>
+          <div class="gallery">
+            <figure>
+              <img src="images\05สนาม-อบจ.ขอนแก่น.jpg" alt="student activity building">
+              <figcaption>พื้นที่กิจกรรมนักศึกษา</figcaption>
+            </figure>
+            <figure>
+              <img src="images\06สระว่ายน้ำชนเห็นชอบ มหาวิทยาลัยขอนแก่น.jpg" alt="students hanging out">
+              <figcaption>สระว่ายน้ำชนเห็นชอบ</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <article id="botanical" class="place">
+          <header>
+            <h2>อุทยานเกษตร มหาวิทยาลัยขอนแก่น</h2>
+          </header>
+          <p class="desc">อุทยานเกษตรภายในมหาวิทยาลัยเป็นพื้นที่สีเขียวที่เหมาะสำหรับการพักผ่อน เดินศึกษา และทำกิจกรรมกลางแจ้ง</p>
+          <div class="gallery">
+            <figure>
+              <img src="images\07cafe.jpg" alt="botanical garden path">
+              <figcaption>Grand Opening Agro Outlet</figcaption>
+            </figure>
+            <figure>
+              <img src="images\08run.jpg" alt="green area for relaxation">
+              <figcaption>เส้นทางเดินและต้นไม้หลากหลายชนิด</figcaption>
+            </figure>
+          </div>
+        </article>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- วิธีทดสอบ: เปิดผ่านเบราว์เซอร์โดยดับเบิลคลิกที่ไฟล์ `index.html` หรือรันเซิร์ฟเวอร์ท้องถิ่น -->
+</body>
+</html>
