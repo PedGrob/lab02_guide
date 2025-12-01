@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KKU Campus Guide - Redirect</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #A73B24 0%, #d4562a 100%);
+      font-family: "Kanit", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    .container {
+      text-align: center;
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      max-width: 500px;
+    }
+    h1 {
+      color: #A73B24;
+      margin: 0 0 20px 0;
+      font-size: 28px;
+    }
+    p {
+      color: #6b7280;
+      margin: 0 0 30px 0;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+    a {
+      display: inline-block;
+      padding: 12px 30px;
+      background-color: #A73B24;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    a:hover {
+      background-color: #8b2f1f;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(167, 59, 36, 0.3);
+    }
+    .auto-redirect {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #9ca3af;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>KKU Campus Guide</h1>
+    <p>กำลังนำทำให้ไปยังแนวทางการเยี่ยมชมสถานที่ของมหาวิทยาลัยขอนแก่น...</p>
+    <a href="lab02_guide/index.html">คลิกที่นี่เพื่อเข้าสู่เว็บไซต์ →</a>
+    <div class="auto-redirect">
+      หากไม่เกิดการเปลี่ยนเส้นทางโดยอัตโนมัติ กรุณารอสักครู่...
+    </div>
+  </div>
+
+  <script>
+    // Auto redirect after 2 seconds
+    setTimeout(function() {
+      window.location.href = 'lab02_guide/index.html';
+    }, 2000);
+  </script>
+</body>
+</html>
